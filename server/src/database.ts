@@ -8,16 +8,16 @@ function createTables(db: sqlite3.Database) {
     db.run(`
         CREATE TABLE IF NOT EXISTS staff_team_lookup (
         staff_pass_id TEXT PRIMARY KEY,
-        team_name TEXT,
-        created_at INTEGER
+        team_name TEXT NOT NULL,
+        created_at INTEGER NOT NULL
         );
     `);
 
     db.run(`
         CREATE TABLE IF NOT EXISTS team_redemptions (
         team_name TEXT PRIMARY KEY,
-        representative_pass_id TEXT,
-        redeemed_at INTEGER
+        representative_pass_id TEXT NOT NULL,
+        redeemed_at INTEGER NOT NULL
         );
     `);
 }

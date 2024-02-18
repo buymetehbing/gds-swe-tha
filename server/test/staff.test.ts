@@ -42,7 +42,18 @@ describe('Test verifyStaff function', () => {
   });
 
   test('Should return null if staff does not exist', (done) => {
-    verifyStaff('NON_EXISTING_ID', (record) => {
+    const nonExistentID = 'NON_EXISTING_ID';
+
+    verifyStaff(nonExistentID, (record) => {
+      expect(record).toBeNull();
+      done();
+    });
+  });
+
+  test('Should return null if staff pass ID is passed as an empty string', (done) => {
+    const emptyID = '';
+
+    verifyStaff(emptyID, (record) => {
       expect(record).toBeNull();
       done();
     });

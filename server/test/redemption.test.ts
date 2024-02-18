@@ -47,6 +47,15 @@ describe('Test checkForPastRedemption function', () => {
     });
   });
 
+  test('Should return null record if team name is passed as an empty string', (done) => {
+    const teamName = '';
+
+    checkForPastRedemption(teamName, (record) => {
+      expect(record).toBeNull();
+      done();
+    });
+  });
+
 });
 
 
@@ -98,6 +107,26 @@ describe('Test addNewRedemption function', () => {
 
   test('Should return false if redemption already exists (different staff representative)', (done) => {
     const representativePassId = 'STAFF_ABCD1234';
+    const redeemedAt = Date.now();
+
+    addNewRedemption(testRedemption.team_name, representativePassId, redeemedAt, (record) => {
+      expect(record).toEqual(false);
+      done();
+    });
+  });
+
+  test('Should return false if team name is passed as an empty string', (done) => {
+    const teamName = '';
+    const redeemedAt = Date.now();
+
+    addNewRedemption(teamName, testRedemption.representative_pass_id, redeemedAt, (record) => {
+      expect(record).toEqual(false);
+      done();
+    });
+  });
+
+  test('Should return false if representativePassId is passed as an empty string', (done) => {
+    const representativePassId = '';
     const redeemedAt = Date.now();
 
     addNewRedemption(testRedemption.team_name, representativePassId, redeemedAt, (record) => {
