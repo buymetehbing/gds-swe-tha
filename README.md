@@ -28,6 +28,14 @@ npm start
 ```
 The server will be running at `localhost:3000`.
 
+
+To start the webapp
+```
+npm run dev
+```
+The webapp will be running at `localhost:5173`.
+
+
 To run tests
 ```
 npm test
