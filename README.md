@@ -4,7 +4,9 @@
 
 This repository contains my solution to the Take Home Assignment for GovTech's Internship Programme (GDS).
 
-For about me, [click here](ABOUT).
+In this solution, I've employed a tech stack that combines TypeScript, Node.js, and Express on the backend, leveraging SQLite as the database solution. For the frontend, I've utilized React.js.
+
+For more about me, [click here](ABOUT) :)
 
 ### Task
 
@@ -26,6 +28,7 @@ npm install
 
 To start the server
 ```
+cd server
 npm start
 ```
 The server will be running at `localhost:3000`.
@@ -34,6 +37,7 @@ The server will be running at `localhost:3000`.
 
 To start the webapp
 ```
+cd webapp
 npm run dev
 ```
 The webapp will be running at `localhost:5173`.
@@ -42,6 +46,7 @@ The webapp will be running at `localhost:5173`.
 
 To run tests
 ```
+cd server
 npm test
 ```
 
@@ -53,13 +58,7 @@ To adjust CSV file path for staff to team mapping, change the staffCsvFilePath v
 const staffCsvFilePath = 'csv/staff-id-to-team-mapping-long.csv';
 ```
 
-## Solution Explanation
-
-### Approach
-
-In this solution, I've employed a tech stack that combines TypeScript, Node.js, and Express on the backend, leveraging SQLite as the database solution. For the frontend, I've utilized React.js.
-
-### Assumptions Made
+## Assumptions
 
 1. Each team has a unique name.
 2. Each team can only redeem one gift maximum.
@@ -69,7 +68,7 @@ In this solution, I've employed a tech stack that combines TypeScript, Node.js, 
 6. Mapping records cannot be created in the future.
 7. All records in the csv files do not contain any null values.
 
-### Database Schema
+## Database Schema
 
 To maintain data integrity and ensure the consistency of redemptions, I have chosen to use SQLite. Indexing allows the database to quickly locate and retrieve data, helping to speed up lookup operations.
 
@@ -86,9 +85,9 @@ To maintain data integrity and ensure the consistency of redemptions, I have cho
 | representative_pass_id   |  TEXT                   |
 | redeemed_at              |  INTEGER                |
 
-### API Endpoints
+## API Endpoints
 
-#### GET /staff/:staffPassId
+### GET /staff/:staffPassId
 Verify the identity of a staff member based on their unique staff pass ID. Returns information about the staff member if found.
 
 Parameters:
@@ -97,9 +96,7 @@ Parameters:
 | ------------- |--------------|---------------------|
 | staffPassId   |  string      | The unique identifier associated with the staff member |
 
-<br>
-
-#### GET /redemption/:teamName
+### GET /redemption/:teamName
 Checks the redemption status for a specific team. Returns eligibility status and past redemption information if found.
 
 Parameters:
@@ -108,9 +105,7 @@ Parameters:
 | ------------- |--------------|---------------------|
 | teamName      |  string      | The name of the team for which redemption status is requested |
 
-<br>
-
-#### POST /redemption/add
+### POST /redemption/add
 Adds a new redemption for a specific team.
 
 Parameters:
@@ -127,8 +122,6 @@ Test files can be found in the `/test` folder.
 ### Test Setup and Teardown
 
 Before each test, the relevant data is prepared by inserting or deleting records in the tables. After each test, the data is cleaned up to ensure the database remains in a consistent state.
-
-<br>
 
 ### Test `verifyStaff` function
 
