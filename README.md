@@ -134,3 +134,10 @@ This test suite validates the behavior of the `checkForPastRedemption` function,
 ### Test `addNewRedemption` function
 
 This test suite assesses the functionality of the `addNewRedemption` function, which adds new redemption records. The tests include cases where redemption is successfully added, where the redemption already exists with the same staff representative, and where the redemption already exists with a different staff representative.
+
+## Screenshots
+
+![alt text](screenshots/Screenshot-1.png "Verification page")
+![alt text](screenshots/Screenshot-2.png "Redemption page (Eligible)")
+![alt text](screenshots/Screenshot-3.png "Redemption page (Ineligible)")
+![alt text](screenshots/Screenshot-4.png "Success page")
