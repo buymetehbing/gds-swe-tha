@@ -52,7 +52,7 @@ npm test
 
 ## Configuration
 
-To adjust CSV file path for staff to team mapping, change the staffCsvFilePath variable found in `src/database.ts`.
+To adjust CSV file path for staff to team mapping, change the staffCsvFilePath variable found in `server/src/database.ts`.
 
 ```
 const staffCsvFilePath = 'csv/staff-id-to-team-mapping-long.csv';
