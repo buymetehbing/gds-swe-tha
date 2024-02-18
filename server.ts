@@ -14,9 +14,9 @@ app.get('/staff/:staffPassId', (req: Request, res: Response) => {
 
     verifyStaff(staffPassId, (record) => {
         if (record) {
-            res.status(200).send({ staff_pass_id: record.staff_pass_id, team_name: record.team_name });
+            res.status(200).json({ success: true, record: record });
         } else {
-            res.status(404).json({ message: `No staff found with ID ${staffPassId}.` });
+            res.status(404).json({ success: false, message: `No records of staff ${staffPassId} found.` });
         }
     });
 });
@@ -26,7 +26,7 @@ app.get('/redemption/:teamName', (req: Request, res: Response) => {
 
     checkForPastRedemption(teamName, (record) => {
         if (record) {
-            res.status(200).json({ status: 'INELIGIBLE', data: record });
+            res.status(200).json({ status: 'INELIGIBLE', record: record });
         } else {
             res.status(200).json({ status: 'ELIGIBLE' });
         }
@@ -39,9 +39,9 @@ app.post('/redemption/add', (req: Request, res: Response) => {
 
     addNewRedemption(teamName, representativePassId, redeemedAt, (success) => {
         if (success) {
-            res.status(200).json({ message: `Redemption for ${teamName} added successfully.` });
+            res.status(200).json({ success: true });
         } else {
-            res.status(500).json({ message: `Redemption for ${teamName} failed.` });
+            res.status(500).json({ success: false, message: `Redemption for ${teamName} failed.` });
         }
     });
 });
