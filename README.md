@@ -6,7 +6,7 @@ This repository contains my solution to the Take Home Assignment for GovTech's I
 
 In this solution, I've employed a tech stack that combines TypeScript, Node.js, and Express on the backend, leveraging SQLite as the database solution. For the frontend, I've utilized React.js.
 
-For more about me, [click here](ABOUT) :)
+For more about me, [click here](ABOUT.md) :)
 
 ### Task
 
