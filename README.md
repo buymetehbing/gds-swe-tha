@@ -35,7 +35,7 @@ npm test
 
 ## Configuration
 
-To adjust CSV file path for staff to team mapping, change the staffCsvFilePath variable in `src/database.ts`.
+To adjust CSV file path for staff to team mapping, change the staffCsvFilePath variable found in `src/database.ts`.
 
 ```
 const staffCsvFilePath = 'csv/staff-id-to-team-mapping-long.csv';
@@ -99,11 +99,6 @@ Parameters:
 #### POST /redemption/add
 Adds a new redemption for a specific team.
 
-Body: 
-- teamName: The name of the team.
-- representativePassId: The pass ID of the team representative.
-
-
 Parameters:
 
 | Name          | Type         | Description         |
@@ -113,18 +108,20 @@ Parameters:
 
 ## Test Suite Overview
 
+Test files can be found in the `/test` folder.
+
 ### Test Setup and Teardown
 
 Before each test, the relevant data is prepared by inserting or deleting records in the tables. After each test, the data is cleaned up to ensure the database remains in a consistent state.
 
-`verifyStaff` Function
+### Test `verifyStaff` function
 
 This test suite assesses the behavior of the `verifyStaff` function, which is responsible for verifying if a staff exists in the records. The tests cover scenarios where the staff record exists and where it doesn't.
 
-`checkForPastRedemption` Function
+### Test `checkForPastRedemption` function
 
 This test suite validates the behavior of the `checkForPastRedemption` function, which is responsible for verifying if a team has redeemed in the past. The tests cover scenarios where the redemption record exists and where it doesn't.
 
-`addNewRedemption` Function
+### Test `addNewRedemption` function
 
 This test suite assesses the functionality of the `addNewRedemption` function, which adds new redemption records. The tests include cases where redemption is successfully added, where the redemption already exists with the same staff representative, and where the redemption already exists with a different staff representative.
