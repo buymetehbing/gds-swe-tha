@@ -22,12 +22,15 @@ The redemption data should at least contain the following information: `team_nam
 npm install
 ```
 
+<br>
+
 To start the server
 ```
 npm start
 ```
 The server will be running at `localhost:3000`.
 
+<br>
 
 To start the webapp
 ```
@@ -35,6 +38,7 @@ npm run dev
 ```
 The webapp will be running at `localhost:5173`.
 
+<br>
 
 To run tests
 ```
@@ -93,6 +97,7 @@ Parameters:
 | ------------- |--------------|---------------------|
 | staffPassId   |  string      | The unique identifier associated with the staff member |
 
+<br>
 
 #### GET /redemption/:teamName
 Checks the redemption status for a specific team. Returns eligibility status and past redemption information if found.
@@ -103,6 +108,7 @@ Parameters:
 | ------------- |--------------|---------------------|
 | teamName      |  string      | The name of the team for which redemption status is requested |
 
+<br>
 
 #### POST /redemption/add
 Adds a new redemption for a specific team.
@@ -121,6 +127,8 @@ Test files can be found in the `/test` folder.
 ### Test Setup and Teardown
 
 Before each test, the relevant data is prepared by inserting or deleting records in the tables. After each test, the data is cleaned up to ensure the database remains in a consistent state.
+
+<br>
 
 ### Test `verifyStaff` function
 
